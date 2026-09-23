@@ -1,1 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Aladin&family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Bebas+Neue&family=Caveat:wght@400..700&family=Cedarville+Cursive&family=Condiment&family=Dancing+Script:wght@400..700&family=Encode+Sans+SC:wght@100..900&family=Farsan&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Island+Moments&family=Macondo&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Overlock+SC&family=Parkinsans:wght@300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100..900;1,100..900&family=Quintessential&family=Story+Script&display=swap');
+@import "tailwindcss";
 
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-island: 'Island Moments', cursive;
+  --font-dancing: 'Dancing Script', cursive;
+  --font-bebas: 'Bebas Neue', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-overlock: 'Overlock SC', sans-serif;
+  --font-jakarta: 'Plus Jakarta Sans', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  --font-outfit: 'Outfit', sans-serif;
+}
+
+#testimonials .font-editorial,
+footer .font-editorial {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-island {
+  font-family: 'Island Moments', cursive;
+}
+
+.font-dancing {
+  font-family: 'Dancing Script', cursive;
+}
+
+.font-bebas,
+.font-bebas-neue {
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.font-overlock,
+.font-overlock-sc {
+  font-family: 'Overlock SC', sans-serif;
+}
+
+.font-jakarta,
+.font-plus-jakarta {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-outfit {
+  font-family: 'Outfit', sans-serif;
+}
