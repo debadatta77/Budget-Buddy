@@ -467,57 +467,8 @@ export const getAdminLiveFeed = async (req, res) => {
  */
 export const getAdminFeedbackSheet = async (req, res) => {
   try {
-    let feedbackItems = await Feedback.find().sort({ createdAt: -1 });
-
-    // Auto-seed sample user feedback if collection is brand new
-    if (feedbackItems.length === 0) {
-      const sampleFeedbacks = [
-        {
-          name: 'Debadatta Parida',
-          email: 'debadattaparida96@gmail.com',
-          phone: '+91 98765 43210',
-          subject: 'AI Advisor & EMI Tracker',
-          message: 'The AI financial advisor and EMI schedule breakdown have completely organized my monthly salary allocations. Truly impressive work!',
-          rating: 5,
-          status: 'Reviewed',
-          source: 'Verified Pro Member',
-          ticketId: 'INQ-10492',
-          type: 'inquiry',
-          severity: 'Low',
-          isSample: true
-        },
-        {
-          name: 'Priya Sharma',
-          email: 'priya.sharma@fintechlab.io',
-          phone: '+91 98220 11990',
-          subject: 'Multi-Currency Feature Request',
-          message: 'Would love to see EUR and GBP live exchange rates automatically converting in the analytics dashboard when recording foreign expenses.',
-          rating: 4,
-          status: 'New',
-          source: 'Contact Page Inquiry',
-          ticketId: 'INQ-10493',
-          type: 'inquiry',
-          severity: 'Medium',
-          isSample: true
-        },
-        {
-          name: 'Rahul Verma',
-          email: 'rahul.v@techcorp.in',
-          phone: '+91 97114 88320',
-          subject: 'Emergency Vault Lock Enhancement',
-          message: 'The vault locking mechanism helped me save ₹35,000 this quarter without accidentally dipping into reserves for impulse shopping.',
-          rating: 5,
-          status: 'Resolved',
-          source: 'In-App Feedback',
-          ticketId: 'INQ-10494',
-          type: 'inquiry',
-          severity: 'Low',
-          isSample: true
-        }
-      ];
-
-      feedbackItems = await Feedback.insertMany(sampleFeedbacks);
-    }
+    // Only return real feedback submitted by users in production
+    const feedbackItems = await Feedback.find().sort({ createdAt: -1 });
 
     // Also fetch public user testimonials for combined feedback intelligence
     const testimonials = await Testimonial.find().sort({ createdAt: -1 });
