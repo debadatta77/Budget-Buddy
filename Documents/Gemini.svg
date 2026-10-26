@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1350.405083333333 1455.854" width="1350.405083333333" height="1455.854" style="--bg:#1F1F1F;--fg:#CCCCCC;--line:#CCCCCC;--accent:#0078D4;--muted:#CCCCCCCC;--surface:#181818;--border:#CCCCCC;background:var(--bg)">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+  text { font-family: 'Inter', system-ui, sans-serif; }
+  svg {
+    /* Derived from --bg and --fg (overridable via --line, --accent, etc.) */
+    --_text:          var(--fg);
+    --_text-sec:      var(--muted, color-mix(in srgb, var(--fg) 60%, var(--bg)));
+    --_text-muted:    var(--muted, color-mix(in srgb, var(--fg) 40%, var(--bg)));
+    --_text-faint:    color-mix(in srgb, var(--fg) 25%, var(--bg));
+    --_line:          var(--line, color-mix(in srgb, var(--fg) 50%, var(--bg)));
+    --_arrow:         var(--accent, color-mix(in srgb, var(--fg) 85%, var(--bg)));
+    --_node-fill:     var(--surface, color-mix(in srgb, var(--fg) 3%, var(--bg)));
+    --_node-stroke:   var(--border, color-mix(in srgb, var(--fg) 20%, var(--bg)));
+    --_group-fill:    var(--bg);
+    --_group-hdr:     color-mix(in srgb, var(--fg) 5%, var(--bg));
+    --_inner-stroke:  color-mix(in srgb, var(--fg) 12%, var(--bg));
+    --_key-badge:     color-mix(in srgb, var(--fg) 10%, var(--bg));
+  }
+</style>
+<defs>
+  <marker id="arrowhead" markerWidth="8" markerHeight="5" refX="7" refY="2.5" orient="auto">
+    <polygon points="0 0, 8 2.5, 0 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+  <marker id="arrowhead-start" markerWidth="8" markerHeight="5" refX="1" refY="2.5" orient="auto-start-reverse">
+    <polygon points="8 0, 0 2.5, 8 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+</defs>
+<g class="subgraph" data-id="Context_Assembly" data-label="1. Real-Time Telemetry Assembly">
+  <rect x="848.9120833333334" y="276.70000000000005" width="461.4929999999998" height="280.70000000000005" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="848.9120833333334" y="276.70000000000005" width="461.4929999999998" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="860.9120833333334" y="290.70000000000005" font-size="12" font-weight="600" fill="var(--_text-sec)" dy="4.199999999999999">1. Real-Time Telemetry Assembly</text>
+</g>
+<g class="subgraph" data-id="Prompt_Engineering" data-label="2. Prompt Synthesis">
+  <rect x="518.6475833333334" y="617.4000000000001" width="578.011" height="181.8" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="518.6475833333334" y="617.4000000000001" width="578.011" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="530.6475833333334" y="631.4000000000001" font-size="12" font-weight="600" fill="var(--_text-sec)" dy="4.199999999999999">2. Prompt Synthesis</text>
+</g>
+<polyline class="edge" data-from="Client" data-to="Router" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="POST /api/v1/ai/chat (Bearer JWT)" points="185.98625000000004,1378.954 185.98625000000004,1366.954 125.5,1366.954 125.5,599.4000000000001 545.7043333333334,599.4000000000001 545.7043333333334,76.9" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="Router" data-to="AuthGuard" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="581.4236666666666,76.9 581.4236666666666,88.9 1079.6585833333334,88.9 1079.6585833333334,100.9" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="AuthGuard" data-to="Ctrl" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1079.6585833333334,137.8 1079.6585833333334,185.8" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="CheckKey" data-to="GeminiAPI" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="Yes" points="647.3609166666666,894.3256666666667 647.3609166666666,841.2 476.4895833333333,841.2 476.4895833333333,796.9000000000001 416.332,796.9000000000001 416.332,760.9000000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="CheckKey" data-to="FallbackEngine" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="No / Network Timeout" points="688.4865833333333,1099.954 688.4865833333333,1204.254 616.76875,1204.254 616.76875,1216.254" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="GeminiAPI" data-to="GeminiResp" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="Success" points="293.84,760.9000000000001 293.84,1213.754 249.72949999999997,1213.754 249.72949999999997,1306.0539999999999" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="GeminiAPI" data-to="FallbackEngine" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="API Error / Rate Limit" points="355.08599999999996,760.9000000000001 355.08599999999996,1159.954 382.12791666666664,1159.954 382.12791666666664,1204.254 555.8554166666667,1204.254 555.8554166666667,1216.254" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="FallbackEngine" data-to="FallbackResp" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="586.3120833333332,1270.0539999999999 586.3120833333332,1306.0539999999999" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="GeminiResp" data-to="Client" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="249.72949999999997,1342.954 249.72949999999997,1360.954 231.8565,1360.954 231.8565,1378.954" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="FallbackResp" data-to="Client" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="586.3120833333332,1342.954 586.3120833333332,1360.954 231.8565,1360.954 231.8565,1378.954" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="Ctrl" data-to="FetchDB" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1079.6585833333334,222.70000000000002 1079.6585833333334,320.70000000000005" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="CalcMetrics" data-to="PromptBuilder" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1079.6585833333334,541.4000000000001 1079.6585833333334,722.3000000000001 900.4835833333334,722.3000000000001 900.4835833333334,746.3000000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="PromptBuilder" data-to="CheckKey" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="900.4835833333334,783.2 900.4835833333334,841.2 729.61225,841.2 729.61225,894.3256666666667" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="FetchDB" data-to="TelemetrySvc" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1079.6585833333334,371.6 1079.6585833333334,419.6" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="TelemetrySvc" data-to="CalcMetrics" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1079.6585833333334,456.50000000000006 1079.6585833333334,504.50000000000006" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="Strategy" data-to="PromptBuilder" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="900.4835833333334,698.3000000000001 900.4835833333334,722.3000000000001 900.4835833333334,722.3000000000001 900.4835833333334,746.3000000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="UserQuery" data-to="PromptBuilder" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="618.9780833333334,698.3000000000001 618.9780833333334,722.3000000000001 900.4835833333334,722.3000000000001 900.4835833333334,746.3000000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<g class="edge-label" data-from="Client" data-to="Router" data-label="POST /api/v1/ai/chat (Bearer JWT)">
+  <rect x="36" y="1220.754" width="178.03000000000003" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="125.01500000000001" y="1235.904" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">POST /api/v1/ai/chat (Bearer JWT)</text>
+</g>
+<g class="edge-label" data-from="CheckKey" data-to="GeminiAPI" data-label="Yes">
+  <rect x="457.9895833333333" y="803.9000000000001" width="36.658" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="476.3185833333333" y="819.0500000000001" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Yes</text>
+</g>
+<g class="edge-label" data-from="CheckKey" data-to="FallbackEngine" data-label="No / Network Timeout">
+  <rect x="630.4865833333333" y="1142.954" width="115.066" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="688.0195833333333" y="1158.104" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">No / Network Timeout</text>
+</g>
+<g class="edge-label" data-from="GeminiAPI" data-to="GeminiResp" data-label="Success">
+  <rect x="219.22949999999997" y="1220.754" width="60.418000000000006" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="249.43849999999998" y="1235.904" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Success</text>
+</g>
+<g class="edge-label" data-from="GeminiAPI" data-to="FallbackEngine" data-label="API Error / Rate Limit">
+  <rect x="324.62791666666664" y="1166.954" width="114.47200000000002" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="381.8639166666666" y="1182.104" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">API Error / Rate Limit</text>
+</g>
+<g class="node" data-id="Client" data-label="Frontend (React Chat UI)" data-shape="rectangle">
+  <rect x="140.11600000000004" y="1378.954" width="183.48099999999994" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="231.8565" y="1397.404" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Frontend (React Chat UI)</text>
+</g>
+<g class="node" data-id="Router" data-label="aiRoutes.js" data-shape="rectangle">
+  <rect x="509.98499999999996" y="40" width="107.158" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="563.564" y="58.45" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">aiRoutes.js</text>
+</g>
+<g class="node" data-id="AuthGuard" data-label="authMiddleware (protect)" data-shape="rectangle">
+  <rect x="986.0655833333333" y="100.9" width="187.18599999999998" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1079.6585833333334" y="119.35000000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">authMiddleware (protect)</text>
+</g>
+<g class="node" data-id="Ctrl" data-label="aiController.js (chatWithAdvisor)" data-shape="rectangle">
+  <rect x="963.8355833333333" y="185.8" width="231.646" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1079.6585833333334" y="204.25" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">aiController.js (chatWithAdvisor)</text>
+</g>
+<g class="node" data-id="CheckKey" data-label="GEMINI_API_KEY Configured?" data-shape="diamond">
+  <polygon points="688.4865833333333,853.2 811.8635833333333,976.577 688.4865833333333,1099.954 565.1095833333334,976.577" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="688.4865833333333" y="976.577" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">GEMINI_API_KEY Configured?</text>
+</g>
+<g class="node" data-id="GeminiAPI" data-label="Google GenAI SDK (@google/genai)
+gemini-2.5-flash" data-shape="rectangle">
+  <rect x="232.594" y="707.1000000000001" width="244.98399999999995" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="355.08599999999996" y="734.0000000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="355.08599999999996" dy="-3.9000000000000012">Google GenAI SDK (@google/genai)</tspan><tspan x="355.08599999999996" dy="16.900000000000002">gemini-2.5-flash</tspan></text>
+</g>
+<g class="node" data-id="FallbackEngine" data-label="Domain Fallback Engine
+(aiContextService.js)" data-shape="rectangle">
+  <rect x="494.94208333333336" y="1216.254" width="182.73999999999998" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="586.3120833333334" y="1243.154" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="586.3120833333334" dy="-3.9000000000000012">Domain Fallback Engine</tspan><tspan x="586.3120833333334" dy="16.900000000000002">(aiContextService.js)</tspan></text>
+</g>
+<g class="node" data-id="GeminiResp" data-label="Return LLM Synthesis (200 OK)" data-shape="rectangle">
+  <rect x="136.5" y="1306.0539999999999" width="226.45899999999997" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="249.72949999999997" y="1324.504" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Return LLM Synthesis (200 OK)</text>
+</g>
+<g class="node" data-id="FallbackResp" data-label="Return Tailored Number-Driven Advice (200 OK)" data-shape="rectangle">
+  <rect x="425.2880833333333" y="1306.0539999999999" width="322.048" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="586.3120833333332" y="1324.504" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Return Tailored Number-Driven Advice (200 OK)</text>
+</g>
+<g class="node" data-id="FetchDB" data-label="Fetch User, Budget, Vault &amp; Last 30 Transactions" data-shape="cylinder">
+  <rect x="916.0410833333333" y="327.70000000000005" width="327.23499999999996" height="36.900000000000006" fill="var(--_node-fill)" stroke="none" />
+  <line x1="916.0410833333333" y1="327.70000000000005" x2="916.0410833333333" y2="364.6" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <line x1="1243.2760833333332" y1="327.70000000000005" x2="1243.2760833333332" y2="364.6" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <ellipse cx="1079.6585833333334" cy="364.6" rx="163.61749999999998" ry="7" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <ellipse cx="1079.6585833333334" cy="327.70000000000005" rx="163.61749999999998" ry="7" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1079.6585833333334" y="346.15000000000003" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Fetch User, Budget, Vault &amp; Last 30 Transactions</text>
+</g>
+<g class="node" data-id="TelemetrySvc" data-label="telemetryService.js" data-shape="rectangle">
+  <rect x="1001.6265833333333" y="419.6" width="156.06400000000002" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1079.6585833333334" y="438.05" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">telemetryService.js</text>
+</g>
+<g class="node" data-id="CalcMetrics" data-label="Calculate: Net Worth, 50/30/20 Rule, Savings Rate, Burn Categories" data-shape="rectangle">
+  <rect x="864.9120833333334" y="504.50000000000006" width="429.4929999999998" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1079.6585833333334" y="522.95" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Calculate: Net Worth, 50/30/20 Rule, Savings Rate, Burn Categories</text>
+</g>
+<g class="node" data-id="PromptBuilder" data-label="aiContextService.js (buildGeminiPrompt)" data-shape="rectangle">
+  <rect x="762.8010833333334" y="746.3000000000001" width="275.3649999999999" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="900.4835833333334" y="764.7500000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">aiContextService.js (buildGeminiPrompt)</text>
+</g>
+<g class="node" data-id="Strategy" data-label="Strategy Persona (Balanced / Aggressive / Frugal)" data-shape="rectangle">
+  <rect x="731.3085833333334" y="661.4000000000001" width="338.3499999999999" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="900.4835833333334" y="679.8500000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Strategy Persona (Balanced / Aggressive / Frugal)</text>
+</g>
+<g class="node" data-id="UserQuery" data-label="User's Chat Message" data-shape="rectangle">
+  <rect x="534.6475833333334" y="661.4000000000001" width="168.661" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="618.9780833333334" y="679.8500000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">User&#39;s Chat Message</text>
+</g>
+</svg>

@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.2359166666666 1090.6839999999997" width="841.2359166666666" height="1090.6839999999997" style="--bg:#1F1F1F;--fg:#CCCCCC;--line:#CCCCCC;--accent:#0078D4;--muted:#CCCCCCCC;--surface:#181818;--border:#CCCCCC;background:var(--bg)">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+  text { font-family: 'Inter', system-ui, sans-serif; }
+  svg {
+    /* Derived from --bg and --fg (overridable via --line, --accent, etc.) */
+    --_text:          var(--fg);
+    --_text-sec:      var(--muted, color-mix(in srgb, var(--fg) 60%, var(--bg)));
+    --_text-muted:    var(--muted, color-mix(in srgb, var(--fg) 40%, var(--bg)));
+    --_text-faint:    color-mix(in srgb, var(--fg) 25%, var(--bg));
+    --_line:          var(--line, color-mix(in srgb, var(--fg) 50%, var(--bg)));
+    --_arrow:         var(--accent, color-mix(in srgb, var(--fg) 85%, var(--bg)));
+    --_node-fill:     var(--surface, color-mix(in srgb, var(--fg) 3%, var(--bg)));
+    --_node-stroke:   var(--border, color-mix(in srgb, var(--fg) 20%, var(--bg)));
+    --_group-fill:    var(--bg);
+    --_group-hdr:     color-mix(in srgb, var(--fg) 5%, var(--bg));
+    --_inner-stroke:  color-mix(in srgb, var(--fg) 12%, var(--bg));
+    --_key-badge:     color-mix(in srgb, var(--fg) 10%, var(--bg));
+  }
+</style>
+<defs>
+  <marker id="arrowhead" markerWidth="8" markerHeight="5" refX="7" refY="2.5" orient="auto">
+    <polygon points="0 0, 8 2.5, 0 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+  <marker id="arrowhead-start" markerWidth="8" markerHeight="5" refX="1" refY="2.5" orient="auto-start-reverse">
+    <polygon points="8 0, 0 2.5, 8 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+</defs>
+<polyline class="edge" data-from="Client" data-to="CORS" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="214.8845,76.9 214.88450000000006,124.9" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="CORS" data-to="Logger" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="214.88450000000006,161.8 214.88449999999995,209.8" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="Logger" data-to="Router" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="214.88449999999995,246.70000000000002 214.8845,294.70000000000005" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="Router" data-to="PublicCtrl" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="Public Route (Auth, Testimonials)" points="182.40383333333335,457.1033333333334 182.40383333333335,525.5840000000001 121,525.5840000000001 121,605.884" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="Router" data-to="AuthGuard" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="Protected Route (Ledger, Vault, AI, etc.)" points="247.36516666666665,457.1033333333334 247.36516666666665,525.5840000000001 308.769,525.5840000000001 308.769,605.884" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="AuthGuard" data-to="Error401" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="Invalid / Missing JWT" points="272.3843333333333,642.784 272.3843333333333,678.784 199.46591666666666,678.784 199.46591666666671,752.084" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="AuthGuard" data-to="AttachUser" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="Valid Token" points="345.15366666666665,642.784 345.15366666666665,678.784 442.0689166666666,678.784 442.0689166666666,752.084" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="AttachUser" data-to="Ctrl" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="442.0689166666666,788.9839999999999 442.0689166666666,823.4839999999999 587.0446666666667,823.4839999999999 587.0446666666667,843.9839999999999" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="Ctrl" data-to="DB" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="636.0641666666667,843.9839999999999 636.0641666666667,831.9839999999999 728.2195833333333,831.9839999999999 728.2195833333333,802.9839999999999" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="DB" data-to="Ctrl" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="691.7114166666667,802.9839999999999 691.7114166666667,823.4839999999999 587.0446666666667,823.4839999999999 587.0446666666667,843.9839999999999" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="Ctrl" data-to="JSONSuccess" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="554.365,880.8839999999999 554.365,916.8839999999999 478.55633333333327,916.8839999999999 478.55633333333327,928.8839999999999" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="Ctrl" data-to="JSONError" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="Catch Error" points="619.7243333333333,880.8839999999999 619.7243333333333,933.4839999999999 667.7353333333333,933.4839999999999 667.7353333333333,1013.7839999999999" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<g class="edge-label" data-from="Router" data-to="PublicCtrl" data-label="Public Route (Auth, Testimonials)">
+  <rect x="36" y="532.5840000000001" width="169.11999999999998" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="120.55999999999999" y="547.734" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Public Route (Auth, Testimonials)</text>
+</g>
+<g class="edge-label" data-from="Router" data-to="AuthGuard" data-label="Protected Route (Ledger, Vault, AI, etc.)">
+  <rect x="209.26899999999998" y="532.5840000000001" width="198.82" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="308.679" y="547.734" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Protected Route (Ledger, Vault, AI, etc.)</text>
+</g>
+<g class="edge-label" data-from="AuthGuard" data-to="Error401" data-label="Invalid / Missing JWT">
+  <rect x="140.46591666666666" y="685.784" width="117.44200000000002" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="199.18691666666666" y="700.934" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Invalid / Missing JWT</text>
+</g>
+<g class="edge-label" data-from="AuthGuard" data-to="AttachUser" data-label="Valid Token">
+  <rect x="404.5689166666666" y="685.784" width="74.08000000000001" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="441.60891666666663" y="700.934" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Valid Token</text>
+</g>
+<g class="edge-label" data-from="Ctrl" data-to="JSONError" data-label="Catch Error">
+  <rect x="630.2353333333333" y="940.4839999999999" width="74.08000000000001" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="667.2753333333333" y="955.6339999999999" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Catch Error</text>
+</g>
+<g class="node" data-id="Client" data-label="Client / Frontend (React / Postman)" data-shape="rectangle">
+  <rect x="94.98600000000005" y="40" width="239.79699999999994" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="214.8845" y="58.45" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Client / Frontend (React / Postman)</text>
+</g>
+<g class="node" data-id="CORS" data-label="CORS &amp; JSON Body Parser" data-shape="rectangle">
+  <rect x="113.14050000000003" y="124.9" width="203.488" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="214.88450000000003" y="143.35000000000002" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">CORS &amp; JSON Body Parser</text>
+</g>
+<g class="node" data-id="Logger" data-label="Morgan Logger / Health Check" data-shape="rectangle">
+  <rect x="104.24849999999998" y="209.8" width="221.27199999999996" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="214.88449999999995" y="228.25" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Morgan Logger / Health Check</text>
+</g>
+<g class="node" data-id="Router" data-label="Route Match (/api/v1/*)" data-shape="diamond">
+  <polygon points="214.8845,294.70000000000005 312.3265,392.14200000000005 214.8845,489.58400000000006 117.44250000000001,392.14200000000005" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="214.8845" y="392.14200000000005" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Route Match (/api/v1/*)</text>
+</g>
+<g class="node" data-id="PublicCtrl" data-label="Controller" data-shape="rectangle">
+  <rect x="70.38499999999999" y="605.884" width="101.23000000000002" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="121" y="624.3340000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Controller</text>
+</g>
+<g class="node" data-id="AuthGuard" data-label="authMiddleware (verifyToken)" data-shape="rectangle">
+  <rect x="199.615" y="605.884" width="218.30799999999996" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="308.769" y="624.3340000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">authMiddleware (verifyToken)</text>
+</g>
+<g class="node" data-id="Error401" data-label="401 Unauthorized Response" data-shape="rectangle">
+  <rect x="96.9809166666667" y="752.084" width="204.96999999999997" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="199.4659166666667" y="770.534" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">401 Unauthorized Response</text>
+</g>
+<g class="node" data-id="AttachUser" data-label="Attach req.user (id, email, name)" data-shape="rectangle">
+  <rect x="329.95091666666667" y="752.084" width="224.23599999999993" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="442.0689166666666" y="770.534" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Attach req.user (id, email, name)</text>
+</g>
+<g class="node" data-id="Ctrl" data-label="Controller Business Logic" data-shape="rectangle">
+  <rect x="489.0056666666666" y="843.9839999999999" width="196.078" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="587.0446666666667" y="862.434" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Controller Business Logic</text>
+</g>
+<g class="node" data-id="DB" data-label="MongoDB (Mongoose Models)" data-shape="cylinder">
+  <rect x="582.1869166666667" y="759.084" width="219.049" height="36.900000000000006" fill="var(--_node-fill)" stroke="none" />
+  <line x1="582.1869166666667" y1="759.084" x2="582.1869166666667" y2="795.9839999999999" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <line x1="801.2359166666666" y1="759.084" x2="801.2359166666666" y2="795.9839999999999" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <ellipse cx="691.7114166666667" cy="795.9839999999999" rx="109.5245" ry="7" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <ellipse cx="691.7114166666667" cy="759.084" rx="109.5245" ry="7" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="691.7114166666667" y="777.534" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">MongoDB (Mongoose Models)</text>
+</g>
+<g class="node" data-id="JSONSuccess" data-label="Standard JSON Response (200 / 201)" data-shape="rectangle">
+  <rect x="350.8773333333333" y="928.8839999999999" width="255.35799999999995" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="478.55633333333327" y="947.334" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Standard JSON Response (200 / 201)</text>
+</g>
+<g class="node" data-id="JSONError" data-label="Centralized Error Handler (400 / 500)" data-shape="rectangle">
+  <rect x="538.5743333333332" y="1013.7839999999999" width="258.322" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="667.7353333333333" y="1032.234" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Centralized Error Handler (400 / 500)</text>
+</g>
+</svg>

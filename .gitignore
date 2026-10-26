@@ -1,0 +1,23 @@
+# Environment Secrets
+.env
+.env.*
+*.env
+server/.env
+client/.env
+
+# Dependencies
+node_modules/
+server/node_modules/
+client/node_modules/
+
+# Production Builds
+client/dist/
+dist/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS Files
+.DS_Store
+Thumbs.db

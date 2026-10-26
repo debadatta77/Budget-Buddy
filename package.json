@@ -1,0 +1,16 @@
+{
+  "name": "budget-buddy-fullstack",
+  "version": "1.0.0",
+  "description": "Budget Buddy MERN Full-Stack Financial Application",
+  "scripts": {
+    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"blue,green\" \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "start": "npm run start --prefix server",
+    "test": "npm run test --prefix server"
+  },
+  "keywords": ["mern", "budget-buddy", "finance", "react", "express", "mongodb"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
